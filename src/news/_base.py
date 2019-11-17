@@ -3,6 +3,7 @@ import requests
 from bs4 import BeautifulSoup
 from src.textrank import KeysentenceSummarizer
 from konlpy.tag import Komoran
+from typing import List
 
 komoran = Komoran()
 
@@ -21,7 +22,7 @@ class News:
         self._soup: BeautifulSoup = soup
         self._title: str = self.process_title(soup)
         self._content: str = self.get_content(soup)
-        self._sentences: list[str] = self.process_sentences(self._content)
+        self._sentences: List[str] = self.process_sentences(self._content)
 
     @property
     def title(self):
@@ -32,7 +33,7 @@ class News:
         return self._content
 
     @property
-    def sentences(self) -> list[str]:
+    def sentences(self):
         return self._sentences
 
     def process_title(self, soup: BeautifulSoup) -> str:
@@ -59,7 +60,7 @@ class News:
     def postprocess_content(self, content: str):
         return content
 
-    def process_sentences(self, content: str):
+    def process_sentences(self, content: str) -> List[str]:
         return content.split('.')
 
     def key_sentences(self, limit=3):
@@ -68,7 +69,7 @@ class News:
         return [s[2] for s in selected]
 
     @classmethod
-    def get_soup(cls, url):
+    def get_soup(cls, url) -> BeautifulSoup:
         req = requests.get(url)
 
         # HTML 소스 가져오기
