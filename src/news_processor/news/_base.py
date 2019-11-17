@@ -66,6 +66,8 @@ class News:
     def key_sentences(self, limit=3):
         summarizer = KeysentenceSummarizer(tokenize=komoran_tokenizer, min_sim=0.5)
         selected = summarizer.summarize(self.sentences, topk=limit)
+        # Sort by appearance
+        selected = sorted(selected, key=lambda item: item[0])
         return [s[2] for s in selected]
 
     @classmethod
