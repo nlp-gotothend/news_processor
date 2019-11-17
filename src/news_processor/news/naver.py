@@ -1,5 +1,5 @@
 # Code by ByungWook.Kang @lesimor
-from src.news_processor.news import News
+from news_processor.news import News
 import re
 
 

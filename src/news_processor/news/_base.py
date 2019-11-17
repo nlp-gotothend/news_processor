@@ -1,7 +1,7 @@
 # Code by ByungWook.Kang @lesimor
 import requests
 from bs4 import BeautifulSoup
-from src.news_processor.textrank import KeysentenceSummarizer
+from news_processor.textrank import KeysentenceSummarizer
 from konlpy.tag import Komoran
 from typing import List
 
