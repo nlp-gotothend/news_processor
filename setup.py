@@ -12,7 +12,7 @@ setup(
 
     install_requires=[
         'bs4==0.0.1',
-        'requests==2.22.0',
+        'requests==2.31.0',
         'numpy==1.17.3',
         'scipy==1.3.2',
         'scikit-learn==0.21.3',
