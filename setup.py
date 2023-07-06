@@ -14,7 +14,7 @@ setup(
         'bs4==0.0.1',
         'requests==2.22.0',
         'numpy==1.17.3',
-        'scipy==1.3.2',
+        'scipy==1.10.0',
         'scikit-learn==0.21.3',
         'konlpy==0.5.1'
     ],
